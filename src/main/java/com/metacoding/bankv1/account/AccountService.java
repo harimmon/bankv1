@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class AccountService {
@@ -12,5 +14,9 @@ public class AccountService {
     @Transactional
     public void 계좌생성(AccountRequest.SaveDTO saveDTO, int userId) {
         accountRepository.save(saveDTO.getNumber(), saveDTO.getPassword(), saveDTO.getBalance(), userId);
+    }
+
+    public List<Account> 나의계좌목록(Integer userId) {
+        return accountRepository.findAllByUserId(userId);
     }
 }
