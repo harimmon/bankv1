@@ -14,7 +14,7 @@ public class AccountRepository {
 
     // 재사용 하려고
     public void updateByNumber(int balance, String password, int number) {
-        Query query = em.createNativeQuery("update account set balance = ?, password = ? where number = ?");
+        Query query = em.createNativeQuery("update account_tb set balance = ?, password = ? where number = ?");
         query.setParameter(1, number);
         query.setParameter(2, password);
         query.setParameter(3, balance);
