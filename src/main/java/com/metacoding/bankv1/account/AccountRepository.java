@@ -94,8 +94,8 @@ public class AccountRepository {
         }
 
         List<Object[]> obsList = query.getResultList();
-        List<AccountResponse.DetailDTO> detailList = new ArrayList<>();
 
+        List<AccountResponse.DetailDTO> detailList = new ArrayList<>();
         for (Object[] obs : obsList) {
             AccountResponse.DetailDTO detail =
                     new AccountResponse.DetailDTO(
